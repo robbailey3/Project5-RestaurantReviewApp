@@ -46,6 +46,7 @@ self.addEventListener('fetch', event => {
           response.type != 'basic' ||
           response.type != 'cors'
         ) {
+          // If it is a weird or broken response, just return it.
           return response;
         }
         const networkResponse = response.clone();
