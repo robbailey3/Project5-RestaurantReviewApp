@@ -1,4 +1,4 @@
-const VERSION = 2;
+const VERSION = 1;
 const CACHE_NAME = 'cache::' + VERSION;
 const URLS = [
   '/',
@@ -83,6 +83,7 @@ self.addEventListener('message', event => {
     self.skipWaiting();
   }
 });
+// The function below removes the query parameters from the URL. See README.MD -> Notes section.
 const cleanURL = url => {
   const regex = new RegExp(/(\?|\&)([^=]+)\=([^&]+)/gm);
   return url.replace(regex, '');
