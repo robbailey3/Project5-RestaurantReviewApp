@@ -162,7 +162,7 @@ createRestaurantHTML = restaurant => {
   const div = document.createElement('div');
   div.classList.add('restaurant-details');
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   const link = document.createElement('a');
   link.href = DBHelper.urlForRestaurant(restaurant);
   name.classList.add('restaurant-name');
@@ -180,11 +180,10 @@ createRestaurantHTML = restaurant => {
 
   const more = document.createElement('a');
   more.classList.add('btn');
-  more.setAttribute('role', 'button');
+  more.setAttribute('role', 'link');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   div.append(more);
-
   li.append(div);
   return li;
 };
